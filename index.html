@@ -1,0 +1,25 @@
+import requests
+from lxml import html
+import json,csv
+import pandas as pd
+
+Links= [
+
+]
+'itemprop="model"','itemprop="name"','itemprop="price"','itemprop="description"'
+
+def getPage(list_of_urls):
+    for page in list_of_urls:
+        r=requests.get(page)
+        if r.status_code == 200:
+            tree=html.fromstring(r.content)
+            return tree
+        else:
+            if bad_reqs:
+
+                bad_reqs.append(page)
+            else:
+                bad_reqs=(page)
+
+def parsePage():
+    
